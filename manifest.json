@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Coveo Debug & Export",
+  "version": "1.0",
+  "description": "Exports Coveo search results to CSV with parsed Ranking Info.",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.slb.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.slb.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
